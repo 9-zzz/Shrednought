@@ -4,7 +4,9 @@ using System.Collections;
 
 public class SpawnerTest : MonoBehaviour
 {
+    public Slider specialSlider;
     public Image faderwhite;
+    public GameObject Thundero;
 
     public static SpawnerTest S;
 
@@ -29,6 +31,8 @@ public class SpawnerTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        specialSlider.value = enemiesKilled;
+
         if (NoteFinder.S.dPlay)
             Instantiate(obj1, transform.position, transform.rotation); //red - D
 
@@ -54,9 +58,11 @@ public class SpawnerTest : MonoBehaviour
     IEnumerator Thunder()
     {
         faderwhite.color = Color.white;
-        faderwhite.CrossFadeAlpha(1, 0.34f, true);
+        faderwhite.CrossFadeAlpha(0.5f, 0.34f, true);
         DestroyAllObjects("walls");
+        Thundero.gameObject.SetActive(true);
         yield return new WaitForSeconds(0.35f);
+        Thundero.gameObject.SetActive(false);
         faderwhite.CrossFadeAlpha(0, 0.34f, true);
     }
 

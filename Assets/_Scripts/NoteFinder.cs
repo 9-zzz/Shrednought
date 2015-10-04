@@ -19,6 +19,9 @@ public class NoteFinder : MonoBehaviour
 
     public bool lightning = false;
 
+    public bool rotL = false;
+    public bool rotR = false;
+
     public int count = 0;
 
     void Awake()
@@ -41,6 +44,25 @@ public class NoteFinder : MonoBehaviour
         int f = (int)micIn.frequency; // Get the frequency from our MicrophoneInput script
 
         Debug.Log(f);
+
+        //ROTATION
+        if (f >= 125 && f <= 127)
+        {
+            rotR = true;
+        }
+        else
+        {
+            rotR = false;
+        }
+
+        if (f >= 168 && f <= 173)
+        {
+            rotL = true;
+        }
+        else
+        {
+            rotL = false;
+        }
 
         if (f >= 200 && f <= 205) // Compare the frequency to known value, take possible rounding error in to account
         {
