@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathParticle: {fileID: 145066, guid: 66a7843b6ce71dc488e3deafd4425784, type: 2}
-  health: 7
+  health: 3
   speed: -5
   deathTime: 9
   tagCheck: rb
@@ -165,7 +165,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: health
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: deathParticle
